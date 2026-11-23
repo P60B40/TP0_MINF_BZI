@@ -137,14 +137,16 @@ build/default/debug/_ext/1688732426/system_tasks.o: \
  ../../../../../../framework/peripheral/int/processor/../templates/int_VariableOffset_Unsupported.h \
  ../../../../../../framework/peripheral/int/processor/../templates/int_SoftwareNMI_Unsupported.h \
  ../../../../../../framework/system/int/sys_int_mapping.h \
- ../src/system_config/default/framework/driver/tmr/drv_tmr_static.h \
+ ../../../../../../framework/system/tmr/sys_tmr.h \
  ../../../../../../framework/driver/tmr/drv_tmr.h \
  ../../../../../../framework/driver/driver_common.h \
  ../../../../../../framework/driver/tmr/tmr_definitions_pic32m.h \
  ../../../../../../framework/driver/tmr/drv_tmr_compatibility.h \
+ ../src/system_config/default/framework/driver/tmr/drv_tmr_static.h \
  ../../../../../../framework/system/ports/sys_ports.h \
  ../../../../../../framework/system/ports/sys_ports_definitions.h \
- ../src/app.h ../src/system_config/default/system_definitions.h
+ ../src/app.h ../src/system_config/default/system_definitions.h \
+ ../../../../../../bsp/pic32mx_skes/Mc32DriverAdc.h
 
 ../src/system_config/default/system_config.h:
 
@@ -420,7 +422,7 @@ build/default/debug/_ext/1688732426/system_tasks.o: \
 
 ../../../../../../framework/system/int/sys_int_mapping.h:
 
-../src/system_config/default/framework/driver/tmr/drv_tmr_static.h:
+../../../../../../framework/system/tmr/sys_tmr.h:
 
 ../../../../../../framework/driver/tmr/drv_tmr.h:
 
@@ -430,6 +432,8 @@ build/default/debug/_ext/1688732426/system_tasks.o: \
 
 ../../../../../../framework/driver/tmr/drv_tmr_compatibility.h:
 
+../src/system_config/default/framework/driver/tmr/drv_tmr_static.h:
+
 ../../../../../../framework/system/ports/sys_ports.h:
 
 ../../../../../../framework/system/ports/sys_ports_definitions.h:
@@ -437,3 +441,5 @@ build/default/debug/_ext/1688732426/system_tasks.o: \
 ../src/app.h:
 
 ../src/system_config/default/system_definitions.h:
+
+../../../../../../bsp/pic32mx_skes/Mc32DriverAdc.h:

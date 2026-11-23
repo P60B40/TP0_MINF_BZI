@@ -58,6 +58,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include <stdlib.h>
 #include "system_config.h"
 #include "system_definitions.h"
+#include "Mc32DriverAdc.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -88,8 +89,9 @@ typedef enum
 {
 	/* Application's state machine's initial state. */
 	APP_STATE_INIT=0,
-	APP_STATE_SERVICE_TASKS,
-    APP_STATE_WAIT,
+	APP_STATE_WAIT,
+    APP_STATE_SERVICE_TASKS,
+            
 
 	/* TODO: Define states used by the application state machine. */
 
@@ -115,6 +117,12 @@ typedef struct
     APP_STATES state;
 
     /* TODO: Define any additional data used by the application. */
+    S_ADCResults adcRes; 
+    
+    //flag pour éteindre les leds
+    bool firstEntry;
+    
+    bool flag_chenillard; 
 
 } APP_DATA;
 
@@ -200,6 +208,10 @@ void APP_Initialize ( void );
 void APP_Tasks( void );
 void APP_CHANGE_STATE(APP_STATES newState);
 void APP_TMR0_Callback (void);
+void APP_UpdateState(APP_STATES newState);
+void Led_on(void);
+void Led_off(void);
+void chenillard(void);
 
 #endif /* _APP_H */
 

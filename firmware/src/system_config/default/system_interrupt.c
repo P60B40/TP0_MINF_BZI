@@ -71,17 +71,11 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 
  
 
-void __ISR(_TIMER_1_VECTOR, ipl1AUTO) IntHandlerDrvTmrInstance0(void)
+void __ISR(_TIMER_1_VECTOR, ipl3AUTO) IntHandlerDrvTmrInstance0(void)
 {
-    static uint32_t n =0;
-  
     PLIB_INT_SourceFlagClear(INT_ID_0,INT_SOURCE_TIMER_1);
-    n++;
-    if(n >= 999);
-    {
-        n=0;
-        APP_TMR0_Callback();
-    }
+    APP_TMR0_Callback();
+
  }
  /*******************************************************************************
  End of File

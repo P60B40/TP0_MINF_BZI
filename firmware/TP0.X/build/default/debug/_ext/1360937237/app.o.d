@@ -135,14 +135,16 @@ build/default/debug/_ext/1360937237/app.o: ../src/app.c ../src/app.h \
  ../../../../../../framework/peripheral/int/processor/../templates/int_VariableOffset_Unsupported.h \
  ../../../../../../framework/peripheral/int/processor/../templates/int_SoftwareNMI_Unsupported.h \
  ../../../../../../framework/system/int/sys_int_mapping.h \
- ../src/system_config/default/framework/driver/tmr/drv_tmr_static.h \
+ ../../../../../../framework/system/tmr/sys_tmr.h \
  ../../../../../../framework/driver/tmr/drv_tmr.h \
  ../../../../../../framework/driver/driver_common.h \
  ../../../../../../framework/driver/tmr/tmr_definitions_pic32m.h \
  ../../../../../../framework/driver/tmr/drv_tmr_compatibility.h \
+ ../src/system_config/default/framework/driver/tmr/drv_tmr_static.h \
  ../../../../../../framework/system/ports/sys_ports.h \
  ../../../../../../framework/system/ports/sys_ports_definitions.h \
- ../src/app.h ../../../../../../bsp/pic32mx_skes/Mc32DriverLcd.h \
+ ../src/app.h ../../../../../../bsp/pic32mx_skes/Mc32DriverAdc.h \
+ ../../../../../../bsp/pic32mx_skes/Mc32DriverLcd.h \
  ../../../../../../bsp/pic32mx_skes/Mc32Delays.h
 
 ../src/app.h:
@@ -419,7 +421,7 @@ build/default/debug/_ext/1360937237/app.o: ../src/app.c ../src/app.h \
 
 ../../../../../../framework/system/int/sys_int_mapping.h:
 
-../src/system_config/default/framework/driver/tmr/drv_tmr_static.h:
+../../../../../../framework/system/tmr/sys_tmr.h:
 
 ../../../../../../framework/driver/tmr/drv_tmr.h:
 
@@ -429,11 +431,15 @@ build/default/debug/_ext/1360937237/app.o: ../src/app.c ../src/app.h \
 
 ../../../../../../framework/driver/tmr/drv_tmr_compatibility.h:
 
+../src/system_config/default/framework/driver/tmr/drv_tmr_static.h:
+
 ../../../../../../framework/system/ports/sys_ports.h:
 
 ../../../../../../framework/system/ports/sys_ports_definitions.h:
 
 ../src/app.h:
+
+../../../../../../bsp/pic32mx_skes/Mc32DriverAdc.h:
 
 ../../../../../../bsp/pic32mx_skes/Mc32DriverLcd.h:
 

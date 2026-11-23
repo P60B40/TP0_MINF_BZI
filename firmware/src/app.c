@@ -144,38 +144,48 @@ void APP_Tasks ( void )
         /* Application's initial state. */
         case APP_STATE_INIT:
         {
-            //init lcd + message
+            //init lcd + ADC
             lcd_init();
-            printf_lcd("bonjour tp0");
+            BSP_InitADC10();
             lcd_bl_on();
-            
-            DRV_TMR0_Start();
 
+            //timer on
+            DRV_TMR0_Start();
+            //print message
+            lcd_gotoxy(1,1);
+            printf_lcd("TP0 Led+AD <2027>");
+            lcd_gotoxy(1,2);
+            printf_lcd("Zitouni");
             
-            
-            appData.state = APP_STATE_SERVICE_TASKS;
+            //initialisation des état de base
+            appData.firstEntry = true;
+            appData.flag_chenillard = false;
+            //fonction allume led
+            Led_on();
+
+            //retour à l'état attente
+            APP_UpdateState(APP_STATE_WAIT);
             
             break;
         }
         case APP_STATE_WAIT:
         {
-            
+            break;
         }
 
         case APP_STATE_SERVICE_TASKS:
         {
-            //clignotement non blocant à EVITER !!!!!
-            //delay_msCt(250);
-            BSP_LEDToggle(BSP_LED_0);
-            
-              //clignotement blocant
-//            n++;
-//            
-//            if(n >= 100000){
-//                BSP_LEDToggle(BSP_LED_0);
-//                n=0;
-//            }
-            APP_CHANGE_STATE(APP_STATE_WAIT);
+            //lecture et affichage de la valeur ADC 
+            appData.adcRes = BSP_ReadAllADC();
+            lcd_gotoxy(1,3);
+            printf_lcd("CH0 %4d / CH1 %4d", appData.adcRes.Chan0,appData.adcRes.Chan1 );
+            // regarde la flag de la fct callback pour appellé le chenillard si true
+            if(appData.flag_chenillard){
+            chenillard();
+            appData.flag_chenillard = false; // remet le flag à false pour le prochain cycle
+            }
+            //retour à l'état attente
+            APP_UpdateState(APP_STATE_WAIT);
             break;
         }
 
@@ -191,17 +201,80 @@ void APP_Tasks ( void )
     }
 }
 
-void APP_TMR0_Callback (void)
-{
-    appData.state = APP_STATE_SERVICE_TASKS;
+void APP_TMR0_Callback (void){
+
+    static uint8_t cptChenillard = 0;
+    static uint8_t cptStart = 0;
+    
+    cptStart++;
+    //attente de 3 seconde sinon sort de la fonction
+    if(cptStart <29)
+    {
+       return; 
+    }
+    //compteur 
+    cptChenillard++;
+    //le chenillatd s'active que lorsque que le compteur est à 2
+    if(cptChenillard >= 2){
+        //active la flag pour le service task
+        appData.flag_chenillard = true;
+        cptChenillard = 0; //remet le cpt à zero pour le prochain cycle
+    }
+    APP_CHANGE_STATE(APP_STATE_SERVICE_TASKS);
+    
 }
 
 void APP_CHANGE_STATE(APP_STATES newState)
 {
     appData.state = newState;
 }
- 
 
+void APP_UpdateState(APP_STATES newState){
+    appData.state = newState;
+}
+
+void Led_on(void){
+    BSP_LEDOn(BSP_LED_0);
+    BSP_LEDOn(BSP_LED_1);
+    BSP_LEDOn(BSP_LED_2);
+    BSP_LEDOn(BSP_LED_3);
+    BSP_LEDOn(BSP_LED_4);
+    BSP_LEDOn(BSP_LED_5);
+    BSP_LEDOn(BSP_LED_6);
+    BSP_LEDOn(BSP_LED_7);
+}
+
+void Led_off(void){
+    BSP_LEDOff(BSP_LED_0);
+    BSP_LEDOff(BSP_LED_1);
+    BSP_LEDOff(BSP_LED_2);
+    BSP_LEDOff(BSP_LED_3);
+    BSP_LEDOff(BSP_LED_4);
+    BSP_LEDOff(BSP_LED_5);
+    BSP_LEDOff(BSP_LED_6);
+    BSP_LEDOff(BSP_LED_7);
+}
+
+void chenillard(void){
+
+    static uint8_t led = 0;
+
+    Led_off();
+
+    switch(led)
+    {
+        case 0: BSP_LEDOn(BSP_LED_0); break;
+        case 1: BSP_LEDOn(BSP_LED_1); break;
+        case 2: BSP_LEDOn(BSP_LED_2); break;
+        case 3: BSP_LEDOn(BSP_LED_3); break;
+        case 4: BSP_LEDOn(BSP_LED_4); break;
+        case 5: BSP_LEDOn(BSP_LED_5); break;
+        case 6: BSP_LEDOn(BSP_LED_6); break;
+        case 7: BSP_LEDOn(BSP_LED_7); break;
+    }
+    // boucle pour le chenillard
+    led = (led + 1) % 8;
+}
 /*******************************************************************************
  End of File
  */
