@@ -13,10 +13,10 @@ avec :
 T : période souhaitée (100 ms = 0,1 s)
 F : fréquence du microcontrôleur (80 MHz)
 Prescaler : facteur de division du timer
-
 Le Timer 1 étant configuré en mode 16 bits, la valeur du registre de période (PR) ne doit pas dépasser : 2^16−1=65535
 
 <img width="538" height="276" alt="image" src="https://github.com/user-attachments/assets/359f5118-e515-49ec-8e95-979b2561bad7" />
+
  TR = 31249, la valeur étant inférieur à 65535, le prescaler retenu est 256.
 
 
