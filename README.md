@@ -19,6 +19,12 @@ Le Timer 1 étant configuré en mode 16 bits, la valeur du registre de période 
 
  PR = 31249, la valeur étant inférieur à 65535, le prescaler retenu est 256.
 
+## Mesure
+### Oscillograme chenillard
+<img width="1280" height="824" alt="Chenillard_LED1_A_LED4" src="https://github.com/user-attachments/assets/6eafc2c1-a388-40f2-9ae5-341cbf0101a6" />
+
+### Oscillograme délais de 3 seconde
+<img width="1280" height="824" alt="3 seconde de delais" src="https://github.com/user-attachments/assets/898d9f40-b81e-4286-b09e-50c5e631fbef" />
 
 
 
