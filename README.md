@@ -9,8 +9,10 @@ La donnée spécifie une interruption toutes les 100 millisecondes. Le calcul pe
 TP=((t*freq.uc)/Prescaler)-1
 
 <img width="225" height="72" alt="image" src="https://github.com/user-attachments/assets/fb685be3-a35d-4422-a632-bc6699b127e1" />
+
 Avec : un temps de 100ms -> 0.1s, une fréquence de microntroller de 80MHz. Comme le timer est configuré en mode 16bit la période ne doit pas dépasser 65535
 Ce qui donne : ((0.1s*80MHz)/256))-1=31249 ce qui est plus petit que 65535 donc le prescaler doit être de 256.
+
 <img width="538" height="276" alt="image" src="https://github.com/user-attachments/assets/359f5118-e515-49ec-8e95-979b2561bad7" />
 
 
