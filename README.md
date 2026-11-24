@@ -6,6 +6,6 @@ La configuration du timer est réalisée à l'aide de l'outil MPLAB Harmony Conf
 <img width="636" height="94" alt="image" src="https://github.com/user-attachments/assets/c452c5c1-400f-45e0-95fe-eaf665afd549" />
 
 La donnée spécifie une interruption toutes les 100 millisecondes. Le calcul permettant de déterminer les paramètres du timer est le suivant :
-T = ((PR + 1) × Prescaler) / FPB
+PR=(t*freq.uc)/Prescaler-1
 
 
