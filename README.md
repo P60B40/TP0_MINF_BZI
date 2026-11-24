@@ -17,7 +17,7 @@ Le Timer 1 étant configuré en mode 16 bits, la valeur du registre de période 
 
 <img width="538" height="276" alt="image" src="https://github.com/user-attachments/assets/359f5118-e515-49ec-8e95-979b2561bad7" />
 
- TR = 31249, la valeur étant inférieur à 65535, le prescaler retenu est 256.
+ PR = 31249, la valeur étant inférieur à 65535, le prescaler retenu est 256.
 
 
 
