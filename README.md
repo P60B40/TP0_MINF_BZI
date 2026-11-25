@@ -18,6 +18,7 @@ La donnée spécifie le déclenchement d'une interruption toutes les 100 ms. Afi
 | Prescaler | Facteur de division du timer | 256 |
 | Mode | Mode du Timer 1 | 16 bits |
 | PR | Registre de période | 31249 |
+
 Le Timer 1 étant configuré en mode 16 bits, la valeur du registre de période (PR) ne doit pas dépasser : 2^16−1=65535
 
 <img width="538" height="276" alt="image" src="https://github.com/user-attachments/assets/359f5118-e515-49ec-8e95-979b2561bad7" />
