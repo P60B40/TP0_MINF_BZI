@@ -31,4 +31,3 @@ L'oscillogramme met en évidence le délai de 3 secondes appliqué avant l'activ
 
 
 
-
