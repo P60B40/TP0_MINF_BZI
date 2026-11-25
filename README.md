@@ -23,10 +23,11 @@ Le Timer 1 étant configuré en mode 16 bits, la valeur du registre de période 
 ## Mesure
 ### Oscillograme chenillard
 <img width="1280" height="824" alt="Chenillard_LED1_A_LED4" src="https://github.com/user-attachments/assets/6eafc2c1-a388-40f2-9ae5-341cbf0101a6" />
-Les mesures du chenillards
+L'oscillogramme du chenillard montre que les LEDs s'allument successivement avec un intervalle de 200 ms entre chaque commutation. La période observée pour les quatre LEDs est de 800 ms
 
 ### Oscillograme délais de 3 seconde
 <img width="1280" height="824" alt="3 seconde de delais" src="https://github.com/user-attachments/assets/898d9f40-b81e-4286-b09e-50c5e631fbef" />
+L'oscillogramme met en évidence le délai de 3 secondes appliqué avant l'activation du chenillard et le démarrage de la lecture des entrées analogiques (ADC). Durant cette phase d'attente, toutes les LEDs restent allumées. L'état bas observé sur les signaux correspond donc à cette temporisation initiale de 3 secondes. 
 
 
 
