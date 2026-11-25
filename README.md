@@ -10,10 +10,14 @@ La donnée spécifie le déclenchement d'une interruption toutes les 100 ms. Afi
 
 <img width="225" height="72" alt="image" src="https://github.com/user-attachments/assets/fb685be3-a35d-4422-a632-bc6699b127e1" />
 
-avec :
-T : période souhaitée (100 ms = 0,1 s)
-F : fréquence du microcontrôleur (80 MHz)
-Prescaler : facteur de division du timer
+### Paramètres utilisés
+| Paramètre | Description | Valeur |
+|-----------|-------------|---------|
+| T | Période souhaitée | 100 ms (0,1 s) |
+| F | Fréquence du microcontrôleur | 80 MHz |
+| Prescaler | Facteur de division du timer | 256 |
+| Mode | Mode du Timer 1 | 16 bits |
+| PR | Registre de période | 31249 |
 Le Timer 1 étant configuré en mode 16 bits, la valeur du registre de période (PR) ne doit pas dépasser : 2^16−1=65535
 
 <img width="538" height="276" alt="image" src="https://github.com/user-attachments/assets/359f5118-e515-49ec-8e95-979b2561bad7" />
