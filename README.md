@@ -28,6 +28,7 @@ L'oscillogramme du chenillard montre que les LEDs s'allument successivement avec
 ### Oscillograme délais de 3 seconde
 <img width="1280" height="824" alt="3 seconde de delais" src="https://github.com/user-attachments/assets/898d9f40-b81e-4286-b09e-50c5e631fbef" />
 L'oscillogramme met en évidence le délai de 3 secondes appliqué avant l'activation du chenillard et le démarrage de la lecture des entrées analogiques (ADC). Durant cette phase d'attente, toutes les LEDs restent allumées. L'état bas observé sur les signaux correspond donc à cette temporisation initiale de 3 secondes. 
+
 # Conculsion
 Ce travail pratique a permis de découvrir le fonctionnement de la carte PIC32MX et de l'environnement MPLAB Harmony. Les différents objectifs ont été atteints : configuration du timer, génération d'interruptions périodiques, lecture des deux potentiomètres à l'aide des ADC, affichage des valeurs sur le LCD et réalisation d'un chenillard de 8 LEDs.
 
